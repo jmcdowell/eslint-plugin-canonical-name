@@ -1,0 +1,1 @@
+# eslint-plugin-canonical-name
