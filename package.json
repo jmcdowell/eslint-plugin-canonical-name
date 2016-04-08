@@ -10,7 +10,7 @@
   "author": "Justin McDowell",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/mocha tests/lib/rules/canonical-name.js"
   },
   "dependencies": {
     "requireindex": "~1.1.0"
