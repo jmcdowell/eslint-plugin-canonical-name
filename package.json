@@ -10,13 +10,15 @@
   "author": "Justin McDowell",
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests/lib/rules/canonical-name.js"
+    "test": "./node_modules/.bin/mocha tests/lib/rules/canonical-name.js",
+    "lint": "./node_modules/.bin/eslint lib tests"
   },
   "dependencies": {
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": "~2.0.0",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
     "mocha": "^2.4.5"
   },
   "engines": {

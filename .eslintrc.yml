@@ -1,0 +1,7 @@
+---
+  extends: 'airbnb/legacy'
+  env:
+    browser: true
+    node: true
+  rules:
+    func-names: 0

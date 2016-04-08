@@ -4,29 +4,31 @@
  * @copyright 2016 Justin McDowell. All rights reserved.
  * See LICENSE file in root directory for full license.
  */
-"use strict";
+'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/canonical-name"),
+var rule = require('../../../lib/rules/canonical-name');
+var RuleTester = require('eslint').RuleTester;
 
-  RuleTester = require("eslint").RuleTester;
+var options;
+var ruleTester;
 
 //------------------------------------------------------------------------------
 // Helpers
 //------------------------------------------------------------------------------
 
 function formatMessage(match, canonical) {
-  return `Found "${match}", suggest "${canonical}"`;
+  return 'Found "' + match + '", suggest "' + canonical + '"';
 }
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var options = [
+options = [
   [
     {
       canonical: 'xyz',
@@ -39,8 +41,8 @@ var options = [
   ]
 ];
 
-var ruleTester = new RuleTester();
-ruleTester.run("canonical-name", rule, {
+ruleTester = new RuleTester();
+ruleTester.run('canonical-name', rule, {
 
   valid: [
     // Identifier
@@ -64,7 +66,6 @@ ruleTester.run("canonical-name", rule, {
       code: 'var xyz = 100;',
       options: options
     },
-    // Rule is case sensitive.
     {
       code: 'Zyx',
       options: options
@@ -72,7 +73,7 @@ ruleTester.run("canonical-name", rule, {
     {
       code: 'function xyz() { var xyz = 100; }',
       options: options
-    },
+    }
   ],
 
   invalid: [
@@ -123,7 +124,7 @@ ruleTester.run("canonical-name", rule, {
       errors: [{
         message: formatMessage('yxz', 'xyz'),
         type: 'Identifier'
-      },{
+      }, {
         message: formatMessage('zyx', 'xyz'),
         type: 'Identifier'
       }]
