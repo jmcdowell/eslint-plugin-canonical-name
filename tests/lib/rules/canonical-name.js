@@ -20,8 +20,8 @@ var ruleTester;
 // Helpers
 //------------------------------------------------------------------------------
 
-function formatMessage(match, canonical) {
-  return 'Found "' + match + '", suggest "' + canonical + '"';
+function formatMessage(match, suggestion) {
+  return 'Found "' + match + '", suggest "' + suggestion + '"';
 }
 
 //------------------------------------------------------------------------------
