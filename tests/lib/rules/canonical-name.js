@@ -43,7 +43,6 @@ options = [
 
 ruleTester = new RuleTester();
 ruleTester.run('canonical-name', rule, {
-
   valid: [
     // Identifier
     {
@@ -75,7 +74,6 @@ ruleTester.run('canonical-name', rule, {
       options: options
     }
   ],
-
   invalid: [
     // Identifier
     {
@@ -130,5 +128,4 @@ ruleTester.run('canonical-name', rule, {
       }]
     }
   ]
-
 });
